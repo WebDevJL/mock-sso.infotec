@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Stub infotec</title>
+    <link href="css/StyleSheet.css" rel="stylesheet" />
+</head>
+
+<body>
+    <section id="switch">
+        <p>Select the context :</p>
+        <div>
+            <input type="radio" id="fas-ko" checked name="context" value="fas-ko">
+            <label for="fas-ko">FAS K.O.</label>
+
+            <input type="radio" id="bcde-ko" name="context" value="bcde-ko">
+            <label for="bcde-ko">BCDE K.O.</label>
+
+            <input type="radio" id="atlas-create-ko" name="context" value="atlas-create-ko">
+            <label for="atlas-create-ko">ATLAS Create K.O.</label>
+
+            <input type="radio" id="atlas-update-ko" name="context" value="atlas-update-ko">
+            <label for="atlas-update-ko">ATLAS Update K.O.</label>
+        </div>
+    </section>
+    <section id="fas-ko-section">
+        <p>Select the error to simulate :</p>
+        <div>
+            <input type="radio" id="fas_nodata" checked name="errorType" value="fas_nodata" onclick="setUrl(this.value)">
+            <label for="fas_nodata">No data received.</label>
+
+            <input type="radio" id="saml2exception" name="errorType" value="fas_saml_ex" onclick="setUrl(this.value)">
+            <label for="saml2exception">SAML Exception.</label>
+
+            <input type="radio" id="serviceproviderutilityexception" name="errorType" value="fas_sp_ex" onclick="setUrl(this.value)">
+            <label for="serviceproviderutilityexception">Service Provider Utility Exception.</label>
+
+            <input type="radio" id="genericexception" name="errorType" value="fas_ex" onclick="setUrl(this.value)">
+            <label for="serviceproviderutilityexception">Generic Exception.</label>
+        </div>
+        <div>
+            <label for="name">Request url :</label>
+            <input id="baseUrl" type="text" name="url" size="100" placeholder="Enter a url here" value="http://localhost:7602/Authentication/SingleSignInNoFAs.aspx">
+            <input id="url" type="text" name="url" size="100" placeholder="Enter a url here" value="">
+            <input type="submit" name="button" onclick="sendRequest()">
+        </div>
+    </section>
+    <section id="bcde-ko-section" hidden></section>
+    <section id="atlas-create-ko-section" hidden></section>
+    <section id="atlas-update-ko-section" hidden></section>
+    <script src="js/JavaScript.js"></script>
+</body>
+
+</html>
