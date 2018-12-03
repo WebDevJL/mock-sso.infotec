@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Stub infotec</title>
     <link href="css/StyleSheet.css" rel="stylesheet" />
+	<meta charset="utf-8">
 </head>
-
 <body>
     <section>
         <div>
@@ -36,30 +35,32 @@
             <input type="radio" id="fas_nodata" checked name="fasErrorType" value="fas_nodata" onclick="setUrl(this.value)">
             <label for="fas_nodata">No data received.</label>
 
-            <input type="radio" id="saml2exception" name="fasErrorType" value="fas_saml_ex" onclick="setUrl(this.value)">
-            <label for="saml2exception">SAML Exception.</label>
+            <input type="radio" id="fas_saml_ex" name="fasErrorType" value="fas_saml_ex" onclick="setUrl(this.value)">
+            <label for="fas_saml_ex">SAML Exception.</label>
 
-            <input type="radio" id="serviceproviderutilityexception" name="fasErrorType" value="fas_sp_ex" onclick="setUrl(this.value)">
-            <label for="serviceproviderutilityexception">Service Provider Utility Exception.</label>
+            <input type="radio" id="fas_sp_ex" name="fasErrorType" value="fas_sp_ex" onclick="setUrl(this.value)">
+            <label for="fas_saml_ex">Service Provider Utility Exception.</label>
 
-            <input type="radio" id="genericexception" name="fasErrorType" value="fas_ex" onclick="setUrl(this.value)">
-            <label for="serviceproviderutilityexception">Generic Exception.</label>
+            <input type="radio" id="fas_ex" name="fasErrorType" value="fas_ex" onclick="setUrl(this.value)">
+            <label for="fas_ex">Generic Exception.</label>
         </div>
     </section>
     <section id="bcde-ko-section" hidden>
 		<p>Select the RN service error to simulate :</p>
         <div>
-            <input type="radio" id="rn_service_status_list_null" checked name="BcdeErrorType" value="rn_service_status_list_null" onclick="setUrl(this.value)">
+			<input type="radio" id="rn_convert_data_fail" name="bcdeErrorType" value="rn_convert_data_fail" onclick="setUrl(this.value)">
+            <label for="rn_convert_data_fail">Data conversion failed.</label>
+			
+            <input type="radio" id="rn_service_status_list_null" checked name="bcdeErrorType" value="rn_service_status_list_null" onclick="setUrl(this.value)">
             <label for="rn_service_status_list_null">Status list is null.</label>
 
-            <input type="radio" id="rn_service_status_list_empty" name="BcdeErrorType" value="rn_service_status_list_empty" onclick="setUrl(this.value)">
+            <input type="radio" id="rn_service_status_list_empty" name="bcdeErrorType" value="rn_service_status_list_empty" onclick="setUrl(this.value)">
             <label for="rn_service_status_list_empty">Status list is empty.</label>
 
-            <input type="radio" id="rn_service_unavailable" name="BcdeErrorType" value="rn_service_unavailable" onclick="setUrl(this.value)">
+            <input type="radio" id="rn_service_unavailable" name="bcdeErrorType" value="rn_service_unavailable" onclick="setUrl(this.value)">
             <label for="rn_service_unavailable">RN service is unavailable.</label>
 
-            <input type="radio" id="rn_convert_data_fail" name="BcdeErrorType" value="rn_convert_data_fail" onclick="setUrl(this.value)">
-            <label for="rn_convert_data_fail">Data conversion failed.</label>
+          
         </div>
 	</section>
     <section id="atlas-create-ko-section" hidden>atlas create</section>
