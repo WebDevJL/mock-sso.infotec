@@ -11,6 +11,12 @@ function setUrl(value) {
     document.getElementById("baseUrl").value + "?simulate=" + value
 }
 
+function appendSsin(){
+	var hasQuerystring = document.getElementById("url").value.split('?')[1]
+	var separator = hasQuerystring? "&": "?"
+	document.getElementById("url").value +=  separator + "ssin=" +  document.getElementById("ssin").value
+}
+
 function toggleSections(value) {
 	var koSections = document.querySelectorAll('[id$="-ko-section"]')
 	koSections.forEach(function(koSection) {
