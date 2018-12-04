@@ -1,8 +1,18 @@
 ﻿html {
     font-family: sans-serif;
+	font-size:1vw;
 }
 
 label {
     margin-right: 15px;
     line-height: 32px;
+}
+
+#content{
+	max-width: 970px;
+    margin: auto;
+}
+
+.vertigo{
+	display:block;
 }
