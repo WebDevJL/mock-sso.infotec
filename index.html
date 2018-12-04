@@ -9,11 +9,12 @@
 <body>
 	<div id="content">
 		<section>
-        <div>
+			<h3>Stub Infotec</h3>
+		</section>
+		<section>
             <label for="name">Type your base url</label>
             <input id="baseUrl" type="text" name="url" size="100" placeholder="Enter a url here" value="http://localhost:7602/Authentication/SingleSignInNoFAs.aspx"
 				onchange="replicateUrl(this.value)" onkeypress="this.onchange()" oninput="this.onchange()" onpaste="this.onchange()">
-        </div>
 		</section>
 		<section id="switch">
 			<label>Select the context</label>
@@ -59,7 +60,7 @@
 			<p>Select the RN service error to simulate</p>
 			<div>
 				<label for="name">Type the ssin</label>
-				<input id="ssin" type="text" name="ssin" size="100" placeholder="Enter a ssin here" value="79051735850"
+				<input id="ssin" type="text" name="ssin" size="20" placeholder="Enter a ssin here" value="79051735850"
 				onchange="appendSsin()" onkeypress="this.onchange()" oninput="this.onchange()" onpaste="this.onchange()">
 			</div>
 			<div>
@@ -85,13 +86,13 @@
 				</label>
 			</div>
 		</section>
-		<section id="atlas-create-ko-section" hidden>atlas create</section>
-		<section id="atlas-update-ko-section" hidden>atlas update</section>
+		<section id="atlas-create-ko-section" hidden></section>
+		<section id="atlas-update-ko-section" hidden></section>
 		<section id="request-section">
 			<div>
+				<label for="name">Final request url</label>
 				<div>
-					<label for="name">Final request url</label>
-					<input id="url" type="text" name="url" size="100" placeholder="Enter an url here" value="">
+					<input type="url" id="url" type="text" name="url" max="2083" size="120" placeholder="Enter an url here" value="">
 					<input type="submit" name="button" onclick="sendRequest()" value="Process">
 				</div>
 			</div>
