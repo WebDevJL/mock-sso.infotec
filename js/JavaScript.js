@@ -13,8 +13,22 @@ function setUrl(value) {
 
 function appendSsin(){
 	var hasQuerystring = document.getElementById("url").value.split('?')[1]
-	var separator = hasQuerystring? "&": "?"
-	document.getElementById("url").value +=  separator + "ssin=" +  document.getElementById("ssin").value
+	var separator = "?"
+	if(hasQuerystring){
+		separator = "&"
+		var hasMoreThanOneQuerystring = hasQuerystring.split('&')[1]
+		if(hasMoreThanOneQuerystring){
+			document.getElementById("url").value = 
+				document.getElementById("url").value.substring(0, document.getElementById("url").value.lastIndexOf("ssin")) + 
+				"ssin=" + document.getElementById("ssin").value
+		}
+		else{
+			document.getElementById("url").value +=  separator + "ssin=" +  document.getElementById("ssin").value
+		}
+	}
+	else{
+		document.getElementById("url").value +=  separator + "ssin=" +  document.getElementById("ssin").value
+	}
 }
 
 function toggleSections(value) {

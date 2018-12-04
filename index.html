@@ -49,7 +49,8 @@
 		<p>Select the RN service error to simulate :</p>
 		<div>
             <label for="name">Type the ssin :</label>
-            <input id="ssin" type="text" name="ssin" size="100" placeholder="Enter a ssin here" value="79051735850">
+            <input id="ssin" type="text" name="ssin" size="100" placeholder="Enter a ssin here" value="79051735850"
+			onchange="appendSsin()" onkeypress="this.onchange()" oninput="this.onchange()" onpaste="this.onchange()">
         </div>
         <div>
 			<input type="radio" id="rn_convert_data_fail" name="bcdeErrorType" value="rn_convert_data_fail" onclick="setUrl(this.value);appendSsin();">
@@ -65,7 +66,7 @@
             <label for="rn_service_unavailable">RN service is unavailable.</label>
 
            <input type="radio" id="rn_registration_wait_to_call" name="bcdeErrorType" value="rn_registration_wait_to_call" onclick="setUrl(this.value);appendSsin();">
-            <label for="rn_registration_wait_to_call">RN registration wait to call.</label>
+           <label for="rn_registration_wait_to_call">RN registration wait to call.</label>
         </div>
 	</section>
     <section id="atlas-create-ko-section" hidden>atlas create</section>
