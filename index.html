@@ -26,9 +26,9 @@
 				<input type="radio" id="bcde-ko" name="context" value="bcde-ko" onclick="toggleSections(this.value)">
 				BCDE K.O.
 			</label>
-			<label for="atlas-create-ko">
-				<input type="radio" id="atlas-create-ko" name="context" value="atlas-create-ko" onclick="toggleSections(this.value)">
-				ATLAS Create K.O.
+			<label for="atlas-ko">
+				<input type="radio" id="atlas-ko" name="context" value="atlas-ko" onclick="toggleSections(this.value); setUrlWithUserData()">
+				ATLAS K.O.
 			</label>
 			<label for="atlas-update-ko">
 				<input type="radio" id="atlas-update-ko" name="context" value="atlas-update-ko" onclick="toggleSections(this.value)">
@@ -86,7 +86,322 @@
 				</label>
 			</div>
 		</section>
-		<section id="atlas-create-ko-section" hidden></section>
+		<section id="atlas-ko-section" hidden>
+			<div>
+				<label for="login">Login</label>
+				<input id="login" type="text" name="login" maxlength="60" placeholder="Enter a login here" value="webLogin"
+					max="60" required pattern="^[\w-@.]{1,60}$">
+			</div>
+			<div>
+				<label for="mail">Email</label>
+				<input id="mail" type="email" name="mail" maxlength="60" placeholder="Enter a email here" value="webLogin@tec.be"
+					max="60" required pattern="^[\w-\|]+([\.]?[\w-\|])*\@[\w-\|]+([\.][\w-\|]+)+$">
+			</div>
+			<div>
+				<label for="genderCode">Gender code</label>
+				<input id="genderCode" type="text"  list="genderList" name="genderCode" placeholder="Enter a gender code here" value="0"
+					required maxlength="2" pattern="0|1|2|99">
+				<datalist id="genderList">
+					<option label="Mr.">0</option>
+					<option label="Mrs.">1</option>
+					<option label="Miss">2</option>
+					<option label="Undefined">99</option>
+				</datalist>
+			</div>
+			<div>
+				<label for="countryCode">Country code</label>
+				<input id="countryCode" type="text" list="countryList" name="countryCode" placeholder="Enter a country code here" value="BEL"
+					required maxlength="10" pattern="[A-Z]{3}">
+				<datalist id="countryList">
+					 <option value="ABW" label="Aruba">
+					 <option value="AFG" label="Afghanistan"> 
+					 <option value="AGO" label="Angola"> 
+					 <option value="AIA" label="Anguilla"> 
+					 <option value="ALA" label="Îles Åland"> 
+					 <option value="ALB" label="Albanie"> 
+					 <option value="AND" label="Andorre"> 
+					 <option value="ARE" label="Émirats arabes unis"> 
+					 <option value="ARG" label="Argentine"> 
+					 <option value="ARM" label="Arménie"> 
+					 <option value="ASM" label="Samoa américaines"> 
+					 <option value="ATA" label="Antarctique"> 
+					 <option value="ATF" label="antarctiques françaises"> 
+					 <option value="ATG" label="Antigua-et-Barbuda"> 
+					 <option value="AUS" label="Australie"> 
+					 <option value="AUT" label="Autriche"> 
+					 <option value="AZE" label="Azerbaïdjan"> 
+					 <option value="BDI" label="Burundi"> 
+					 <option value="BEL" label="Belgique"> 
+					 <option value="BEN" label="Bénin"> 
+					 <option value="BES" label="Pays-Bas caribéens"> 
+					 <option value="BFA" label="Burkina Faso"> 
+					 <option value="BGD" label="Bangladesh"> 
+					 <option value="BGR" label="Bulgarie"> 
+					 <option value="BHR" label="Bahreïn"> 
+					 <option value="BHS" label="Bahamas"> 
+					 <option value="BIH" label="Bosnie-Herzégovine"> 
+					 <option value="BLM" label="Saint-Barthélemy"> 
+					 <option value="BLR" label="Biélorussie"> 
+					 <option value="BLZ" label="Belize"> 
+					 <option value="BMU" label="Bermudes"> 
+					 <option value="BOL" label="Bolivie"> 
+					 <option value="BRA" label="Brésil"> 
+					 <option value="BRB" label="Barbade"> 
+					 <option value="BRN" label="Brunei"> 
+					 <option value="BTN" label="Bhoutan"> 
+					 <option value="BVT" label="Île Bouvet"> 
+					 <option value="BWA" label="Botswana"> 
+					 <option value="CAF" label="République centrafricaine"> 
+					 <option value="CAN" label="Canada" 
+					 <option value="CCK" label="Îles Cocos"> 
+					 <option value="CHE" label="Suisse"> 
+					 <option value="CHL" label="Chili"> 
+					 <option value="CHN" label="Chine"> 
+					 <option value="CIV" label="Côte d Ivoire"> 
+					 <option value="CMR" label="Cameroun"> 
+					 <option value="COD" label="République démocratique du Congo"> 
+					 <option value="COG" label="République du Congo"> 
+					 <option value="COK" label="Îles Cook"> 
+					 <option value="COL" label="Colombie"> 
+					 <option value="COM" label="Comores (pays)"> 
+					 <option value="CPV" label="Cap-Vert"> 
+					 <option value="CRI" label="Costa Rica"> 
+					 <option value="CUB" label="Cuba"> 
+					 <option value="CUW" label="Curaçao"> 
+					 <option value="CXR" label="Île Christmas"> 
+					 <option value="CYM" label="Îles Caïmans"> 
+					 <option value="CYP" label="Chypre"> 
+					 <option value="CZE" label="République tchèque"> 
+					 <option value="DEU" label="Allemagne"> 
+					 <option value="DJI" label="Djibouti"> 
+					 <option value="DMA" label="Dominique"> 
+					 <option value="DNK" label="Danemark"> 
+					 <option value="DOM" label="République dominicaine"> 
+					 <option value="DZA" label="Algérie"> 
+					 <option value="ECU" label="Équateur (pays)"> 
+					 <option value="EGY" label="Égypte"> 
+					 <option value="ERI" label="Érythrée"> 
+					 <option value="ESH" label="République arabe sahraouie"> 
+					 <option value="ESP" label="Espagne"> 
+					 <option value="EST" label="Estonie"> 
+					 <option value="ETH" label="Éthiopie"> 
+					 <option value="FIN" label="Finlande">
+					 <option value="FJI" label="Fidji">
+					 <option value="FLK" label="Malouines"> 
+					 <option value="FRA" label="France">
+					 <option value="FRO" label="Îles Féroé">
+					 <option value="FSM" label="Micronésie (pays)">
+					 <option value="GAB" label="Gabon">
+					 <option value="GBR" label="Royaume-Uni">
+					 <option value="GEO" label="Géorgie (pays)">
+					 <option value="GGY" label="Guernesey">
+					 <option value="GHA" label="Ghana">
+					 <option value="GIB" label="Gibraltar">
+					 <option value="GIN" label="Guinée">
+					 <option value="GLP" label="Guadeloupe">
+					 <option value="GMB" label="Gambie">
+					 <option value="GNB" label="Guinée-Bissau">
+					 <option value="GNQ" label="Guinée équatoriale">
+					 <option value="GRC" label="Grèce">
+					 <option value="GRD" label="Grenade (pays)">
+					 <option value="GRL" label="Groenland">
+					 <option value="GTM" label="Guatemala">
+					 <option value="GUF" label="Guyane">
+					 <option value="GUM" label="Guam">
+					 <option value="GUY" label="Guyana"> 
+					 <option value="HKG" label="Hong Kong">
+					 <option value="HMD" label="Îles Heard-et-MacDonald">
+					 <option value="HND" label="Honduras">
+					 <option value="HRV" label="Croatie">
+					 <option value="HTI" label="Haïti">
+					 <option value="HUN" label="Hongrie"> 
+					 <option value="IDN" label="Indonésie">
+					 <option value="IMN" label="Île de Man">
+					 <option value="IND" label="Inde">
+					 <option value="IOT" label="Territoire brit. océan Indien">
+					 <option value="IRL" label="Irlande (pays)">
+					 <option value="IRN" label="Iran">
+					 <option value="IRQ" label="Irak">
+					 <option value="ISL" label="Islande">
+					 <option value="ISR" label="Israël">
+					 <option value="ITA" label="Italie">
+					 <option value="JAM" label="Jamaïque"> 
+					 <option value="JEY" label="Jersey">
+					 <option value="JOR" label="Jordanie"> 
+					 <option value="JPN" label="Japon">
+					 <option value="KAZ" label="Kazakhstan">
+					 <option value="KEN" label="Kenya">
+					 <option value="KGZ" label="Kirghizistan">
+					 <option value="KHM" label="Cambodge">
+					 <option value="KIR" label="Kiribati">
+					 <option value="KNA" label="Saint-Christophe-et-Niévès">
+					 <option value="KOR" label="Corée du Sud">
+					 <option value="KWT" label="Koweït">
+					 <option value="LAO" label="Laos">
+					 <option value="LBN" label="Liban">
+					 <option value="LBR" label="Liberia"> 
+					 <option value="LBY" label="Libye">
+					 <option value="LCA" label="Sainte-Lucie">
+					 <option value="LIE" label="Liechtenstein">
+					 <option value="LKA" label="Sri Lanka">
+					 <option value="LSO" label="Lesotho">
+					 <option value="LTU" label="Lituanie">
+					 <option value="LUX" label="Luxembourg (pays)">
+					 <option value="LVA" label="Lettonie">
+					 <option value="MAC" label="Macao">
+					 <option value="MAF" label="Saint-Martin">
+					 <option value="MAR" label="Maroc">
+					 <option value="MCO" label="Monaco">
+					 <option value="MDA" label="Moldavie"> 
+					 <option value="MDG" label="Madagascar">
+					 <option value="MDV" label="Maldives">
+					 <option value="MEX" label="Mexique">
+					 <option value="MHL" label="Îles Marshall (pays)">
+					 <option value="MKD" label="Macédoine (pays)">
+					 <option value="MLI" label="Mali">
+					 <option value="MLT" label="Malte">
+					 <option value="MMR" label="Birmanie">
+					 <option value="MNE" label="Monténégro"> 
+					 <option value="MNG" label="Mongolie">
+					 <option value="MNP" label="Îles Mariannes du Nord">
+					 <option value="MOZ" label="Mozambique">
+					 <option value="MRT" label="Mauritanie">
+					 <option value="MSR" label="Montserrat">
+					 <option value="MTQ" label="Martinique">
+					 <option value="MUS" label="Maurice (pays)">
+					 <option value="MWI" label="Malawi">
+					 <option value="MYS" label="Malaisie"> 
+					 <option value="MYT" label="Mayotte">
+					 <option value="NAM" label="Namibie">
+					 <option value="NCL" label="Nouvelle-Calédonie">
+					 <option value="NER" label="Niger">
+					 <option value="NFK" label="Île Norfolk">
+					 <option value="NGA" label="Nigeria">
+					 <option value="NIC" label="Nicaragua"> 
+					 <option value="NIU" label="Niue">
+					 <option value="NLD" label="Pays-Bas">
+					 <option value="NOR" label="Norvège">
+					 <option value="NPL" label="Népal">
+					 <option value="NRU" label="Nauru">
+					 <option value="NZL" label="Nouvelle-Zélande">
+					 <option value="OMN" label="Oman">
+					 <option value="PAK" label="Pakistan">
+					 <option value="PAN" label="Panama">
+					 <option value="PCN" label="Îles Pitcairn">
+					 <option value="PER" label="Pérou">
+					 <option value="PHL" label="Philippines">
+					 <option value="PLW" label="Palaos">
+					 <option value="PNG" label="Papouasie-Nouvelle-Guinée">
+					 <option value="POL" label="Pologne">
+					 <option value="PRI" label="Porto Rico">
+					 <option value="PRK" label="Corée du Nord">
+					 <option value="PRT" label="Portugal">
+					 <option value="PRY" label="Paraguay">
+					 <option value="PSE" label="Palestine">
+					 <option value="PYF" label="Polynésie française">
+					 <option value="QAT" label="Qatar">
+					 <option value="REU" label="La Réunion">
+					 <option value="ROU" label="Roumanie">
+					 <option value="RUS" label="Russie">
+					 <option value="RWA" label="Rwanda">
+					 <option value="SAU" label="Arabie saoudite">
+					 <option value="SDN" label="Soudan">
+					 <option value="SEN" label="Sénégal">
+					 <option value="SGP" label="Singapour"> 
+					 <option value="SGS" label="Géorgie du Sud Îles Sandwich Sud">
+					 <option value="SHN" label="S-Hélène, Ascension">
+					 <option value="SJM" label="Svalbard et ile Jan Mayen">
+					 <option value="SLB" label="Salomon">
+					 <option value="SLE" label="Sierra Leone">
+					 <option value="SLV" label="Salvador">
+					 <option value="SMR" label="Saint-Marin">
+					 <option value="SOM" label="Somalie">
+					 <option value="SPM" label="Saint-Pierre-et-Miquelon">
+					 <option value="SRB" label="Serbie">
+					 <option value="SSD" label="Soudan du Sud">
+					 <option value="STP" label="Sao Tomé-et-Principe">
+					 <option value="SUR" label="Suriname">
+					 <option value="SVK" label="Slovaquie">
+					 <option value="SVN" label="Slovénie">
+					 <option value="SWE" label="Suède">
+					 <option value="SWZ" label="Swaziland">
+					 <option value="SXM" label="Sint Maarten">
+					 <option value="SYC" label="Seychelles">
+					 <option value="SYR" label="Syrie">
+					 <option value="TCA" label="Îles Turques-et-Caïques">
+					 <option value="TCD" label="Tchad">
+					 <option value="TGO" label="Togo">
+					 <option value="THA" label="Thaïlande">
+					 <option value="TJK" label="Tadjikistan"> 
+					 <option value="TKL" label="Tokelau">
+					 <option value="TKM" label="Turkménistan">
+					 <option value="TLS" label="Timor oriental"> 
+					 <option value="TON" label="Tonga">
+					 <option value="TTO" label="Trinité-et-Tobago">
+					 <option value="TUN" label="Tunisie">
+					 <option value="TUR" label="Turquie">
+					 <option value="TUV" label="Tuvalu">
+					 <option value="TWN" label="Taïwan">
+					 <option value="TZA" label="Tanzanie"> 
+					 <option value="UGA" label="Ouganda">
+					 <option value="UKR" label="Ukraine">
+					 <option value="UMI" label="Îles mineures éloignées des USA">
+					 <option value="URY" label="Uruguay">
+					 <option value="USA" label="États-Unis">
+					 <option value="UZB" label="Ouzbékistan">
+					 <option value="VAT" label="Saint-Siège (Cité du Vatican)">
+					 <option value="VCT" label="S-Vincent-et-les Grenadines">
+					 <option value="VEN" label="Venezuela">
+					 <option value="VGB" label="Îles Vierges britanniques">
+					 <option value="VIR" label="Îles Vierges des États-Unis"> 
+					 <option value="VNM" label="Viêt Nam">
+					 <option value="VUT" label="Vanuatu">
+					 <option value="WLF" label="Wallis-et-Futuna">
+					 <option value="WSM" label="Samoa">
+					 <option value="YEM" label="Yémen">
+					 <option value="ZAF" label="Afrique du Sud">
+					 <option value="ZMB" label="Zambie">
+					 <option value="ZWE" label="Zimbabwe">
+				</datalist>
+			</div>
+			<div>
+				<label for="languageCode">Language code</label>
+				<input id="languageCode" type="text"  list="languageList" name="languageCode" placeholder="Enter a language code here" value="0"
+					required maxlength="2" pattern="1|2|5|9">
+				<datalist id="languageList">
+					<option label="FR">1</option>
+					<option label="EN">2</option>
+					<option label="DE">5</option>
+					<option label="NL">9</option>
+				</datalist>
+			</div>
+			<div>
+				<label for="phone">Phone number</label>
+				<input id="phone" type="text" name="phone" placeholder="Enter a phone number (mask: 9999999999 or +32999999999 or 00329999999)"
+					required pattern="^[\+\*#0-9 ]+$">
+			</div>
+			<div>
+				<label for="tecService">TEC service</label>
+				<input id="tecService" type="text" name="tecService" list="tecServiceList"  placeholder="Enter a TEC service"
+					required pattern="[0-9]">
+				<datalist id="tecServiceList">
+					<option label="Test Contact Use Case">1</option>
+					<option label="TEC Hainaut">3</option>
+					<option label="TEC Namur-Luxembourg">4</option>
+					<option label="TEC Liège-Verviers">5</option>
+					<option label="TEC Brabant Wallon">6</option>
+					<option label="TEC Charleroi">7</option>
+				</datalist>
+			</div>
+			<div>
+				<label for="cgv">CGV</label>
+				<input id="cgv" type="checkbox" name="cgv">
+			</div>
+			<div>
+				<label for="UserToken">SSO token</label>
+				<input id="UserToken" type="text" name="UserToken" placeholder="Enter a token here" required>
+			</div>
+		</section>
 		<section id="atlas-update-ko-section" hidden></section>
 		<section id="request-section">
 			<div>

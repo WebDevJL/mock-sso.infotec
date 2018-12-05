@@ -11,6 +11,28 @@ function setUrl(value) {
     document.getElementById("baseUrl").value + "?simulate=" + value
 }
 
+function setUrlWithUserData() {
+ var login = document.getElementById("login").value
+ var mail = document.getElementById("mail").value
+ var genderCode = document.getElementById("genderCode").value
+ var countryCode = document.getElementById("countryCode").value
+ var languageCode = document.getElementById("languageCode").value
+ var phone = document.getElementById("phone").value
+ var tecService = document.getElementById("tecService").value
+ var cgv = document.getElementById("cgv").value
+ var cgvValue = (cgv && cgv === 'on')? 0:1
+  document.getElementById("url").value =
+    document.getElementById("baseUrl").value +
+	"?login=" + login +
+	"&mail=" + mail + 
+	"&genderCode=" + genderCode +
+	"&countryCode=" + countryCode + 
+	"&languageCode=" + languageCode +
+	"&phone=" + phone +
+	"&tecService=" + tecService + 
+	"&cgv=" + cgv
+}
+
 function appendSsin(){
 	var hasQuerystring = document.getElementById("url").value.split('?')[1]
 	var separator = "?"
@@ -57,9 +79,9 @@ function setError(e){
   var radioElement = document.getElementById(errorValue)
   if(!radioElement) return
   radioElement.checked = true
-  var elementSection = radioElement.closest("section")
-  if(!elementSection) return
-  var selectedSectionId = elementSection.id.replace('-section','')
+  var closestSection = radioElement.closest("section")
+  if(!closestSection) return
+  var selectedSectionId = closestSection.id.replace('-section','')
   toggleSections(selectedSectionId)
   var switchElement = document.getElementById(selectedSectionId)
   if(!switchElement) return
