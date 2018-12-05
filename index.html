@@ -90,17 +90,20 @@
 			<div>
 				<label for="login">Login</label>
 				<input id="login" type="text" name="login" maxlength="60" placeholder="Enter a login here" value="webLogin"
-					max="60" required pattern="^[\w-@.]{1,60}$">
+					max="60" required pattern="^[\w-@.]{1,60}$"
+					onchange="setUrlWithUserData()" onkeypress="this.onchange()" oninput="this.onchange()" onpaste="this.onchange()">
 			</div>
 			<div>
 				<label for="mail">Email</label>
 				<input id="mail" type="email" name="mail" maxlength="60" placeholder="Enter a email here" value="webLogin@tec.be"
-					max="60" required pattern="^[\w-\|]+([\.]?[\w-\|])*\@[\w-\|]+([\.][\w-\|]+)+$">
+					max="60" required pattern="^[\w-\|]+([\.]?[\w-\|])*\@[\w-\|]+([\.][\w-\|]+)+$"
+					onchange="setUrlWithUserData()" onkeypress="this.onchange()" oninput="this.onchange()" onpaste="this.onchange()">
 			</div>
 			<div>
 				<label for="genderCode">Gender code</label>
 				<input id="genderCode" type="text"  list="genderList" name="genderCode" placeholder="Enter a gender code here" value="0"
-					required maxlength="2" pattern="0|1|2|99">
+					required maxlength="2" pattern="0|1|2|99"
+					onchange="setUrlWithUserData()" onkeypress="this.onchange()" oninput="this.onchange()" onpaste="this.onchange()">
 				<datalist id="genderList">
 					<option label="Mr.">0</option>
 					<option label="Mrs.">1</option>
@@ -111,7 +114,8 @@
 			<div>
 				<label for="countryCode">Country code</label>
 				<input id="countryCode" type="text" list="countryList" name="countryCode" placeholder="Enter a country code here" value="BEL"
-					required maxlength="10" pattern="[A-Z]{3}">
+					required maxlength="10" pattern="[A-Z]{3}"
+					onchange="setUrlWithUserData()" onkeypress="this.onchange()" oninput="this.onchange()" onpaste="this.onchange()">
 				<datalist id="countryList">
 					 <option value="ABW" label="Aruba">
 					 <option value="AFG" label="Afghanistan"> 
@@ -367,7 +371,8 @@
 			<div>
 				<label for="languageCode">Language code</label>
 				<input id="languageCode" type="text"  list="languageList" name="languageCode" placeholder="Enter a language code here" value="0"
-					required maxlength="2" pattern="1|2|5|9">
+					required maxlength="2" pattern="1|2|5|9"
+					onchange="setUrlWithUserData()" onkeypress="this.onchange()" oninput="this.onchange()" onpaste="this.onchange()">
 				<datalist id="languageList">
 					<option label="FR">1</option>
 					<option label="EN">2</option>
@@ -378,12 +383,14 @@
 			<div>
 				<label for="phone">Phone number</label>
 				<input id="phone" type="text" name="phone" placeholder="Enter a phone number (mask: 9999999999 or +32999999999 or 00329999999)"
-					required pattern="^[\+\*#0-9 ]+$">
+					required pattern="^[\+\*#0-9 ]+$"
+					onchange="setUrlWithUserData()" onkeypress="this.onchange()" oninput="this.onchange()" onpaste="this.onchange()">
 			</div>
 			<div>
 				<label for="tecService">TEC service</label>
 				<input id="tecService" type="text" name="tecService" list="tecServiceList"  placeholder="Enter a TEC service"
-					required pattern="[0-9]">
+					required pattern="[0-9]"
+					onchange="setUrlWithUserData()" onkeypress="this.onchange()" oninput="this.onchange()" onpaste="this.onchange()">
 				<datalist id="tecServiceList">
 					<option label="Test Contact Use Case">1</option>
 					<option label="TEC Hainaut">3</option>
