@@ -16,3 +16,28 @@ label {
 .vertigo{
 	display:block;
 }
+
+#atlas-ko-section{
+	margin: 0 auto;
+	width: 700px;
+	padding: 1em;
+	/*border: 1px solid #CCC;*/
+	border-radius: 1em;
+}
+
+#atlas-ko-section div + div {
+  margin-top: 1em;
+}
+
+#atlas-ko-section label{
+	display: inline-block;
+	width: 30%;
+	text-align: right;
+}
+
+#atlas-ko-section input{
+	font: 1em sans-serif;
+	width: 40%;
+	box-sizing: border-box;
+	border: 1px solid #999;
+}

@@ -6,9 +6,14 @@
   }, 2000)
 }
 
+function hideFullUrl(hide){
+	document.getElementById("fullUrlSection").hidden = hide
+}
+
 function setUrl(value) {
   document.getElementById("url").value =
     document.getElementById("baseUrl").value + "?simulate=" + value
+  hideFullUrl(true)
 }
 
 function setUrlWithUserData() {
@@ -19,10 +24,8 @@ function setUrlWithUserData() {
  var languageCode = document.getElementById("languageCode").value
  var phone = document.getElementById("phone").value
  var tecService = document.getElementById("tecService").value
- var cgv = document.getElementById("cgv").value
- var cgvValue = (cgv && cgv === 'on')? 0:1
-  document.getElementById("url").value =
-    document.getElementById("baseUrl").value +
+ var cgv = document.getElementById("cgv").checked
+ var resultUrl = document.getElementById("baseUrl").value +
 	"?login=" + login +
 	"&mail=" + mail + 
 	"&genderCode=" + genderCode +
@@ -31,6 +34,9 @@ function setUrlWithUserData() {
 	"&phone=" + phone +
 	"&tecService=" + tecService + 
 	"&cgv=" + cgv
+  document.getElementById("url").value = resultUrl
+  document.getElementById("fullUrlViewer").value = resultUrl 
+  hideFullUrl(false)
 }
 
 function appendSsin(){

@@ -19,15 +19,15 @@
 		<section id="switch">
 			<label>Select the context</label>
 			<label for="fas-ko">
-				<input type="radio" id="fas-ko" checked name="context" value="fas-ko" onclick="toggleSections(this.value)">
+				<input type="radio" id="fas-ko" checked name="context" value="fas-ko" onclick="toggleSections(this.value);hideFullUrl(true)">
 				FAS K.O.
 			</label>
 			<label for="bcde-ko">
-				<input type="radio" id="bcde-ko" name="context" value="bcde-ko" onclick="toggleSections(this.value)">
+				<input type="radio" id="bcde-ko" name="context" value="bcde-ko" onclick="toggleSections(this.value);hideFullUrl(true)">
 				BCDE K.O.
 			</label>
 			<label for="atlas-ko">
-				<input type="radio" id="atlas-ko" name="context" value="atlas-ko" onclick="toggleSections(this.value); setUrlWithUserData()">
+				<input type="radio" id="atlas-ko" name="context" value="atlas-ko" onclick="toggleSections(this.value);setUrlWithUserData()">
 				ATLAS K.O.
 			</label>
 			<label for="atlas-update-ko">
@@ -89,14 +89,14 @@
 		<section id="atlas-ko-section" hidden>
 			<div>
 				<label for="login">Login</label>
-				<input id="login" type="text" name="login" maxlength="60" placeholder="Enter a login here" value="webLogin"
-					max="60" required pattern="^[\w-@.]{1,60}$"
+				<input id="login" type="text" name="login" placeholder="Enter a login here" value="webLogin"
+					required
 					onchange="setUrlWithUserData()" onkeypress="this.onchange()" oninput="this.onchange()" onpaste="this.onchange()">
 			</div>
 			<div>
 				<label for="mail">Email</label>
 				<input id="mail" type="email" name="mail" maxlength="60" placeholder="Enter a email here" value="webLogin@tec.be"
-					max="60" required pattern="^[\w-\|]+([\.]?[\w-\|])*\@[\w-\|]+([\.][\w-\|]+)+$"
+					max="60" required
 					onchange="setUrlWithUserData()" onkeypress="this.onchange()" oninput="this.onchange()" onpaste="this.onchange()">
 			</div>
 			<div>
@@ -402,7 +402,7 @@
 			</div>
 			<div>
 				<label for="cgv">CGV</label>
-				<input id="cgv" type="checkbox" name="cgv">
+				<input id="cgv" type="checkbox" name="cgv" checked onchange="setUrlWithUserData()">
 			</div>
 			<div>
 				<label for="UserToken">SSO token</label>
@@ -416,6 +416,12 @@
 				<div>
 					<input type="url" id="url" type="text" name="url" max="2083" size="120" placeholder="Enter an url here" value="">
 					<input type="submit" name="button" onclick="sendRequest()" value="Process">
+				</div>
+			</div>
+			<div id="fullUrlSection" hidden>
+				<label for="name">Full url</label>
+				<div>
+					<textarea id="fullUrlViewer" name="fullUrlViewer" rows="3" cols="92" minlength="10" maxlength="30" readonly></textarea>
 				</div>
 			</div>
 		</section>
