@@ -8,6 +8,8 @@
 
 function hideFullUrl(hide){
 	document.getElementById("fullUrlSection").hidden = hide
+	document.getElementById("baseUrlFas-section").hidden = hide
+	document.getElementById("baseUrl-section").hidden = !hide
 }
 
 function setUrl(value) {
@@ -25,7 +27,7 @@ function setUrlWithUserData() {
  var phone = document.getElementById("phone").value
  var tecService = document.getElementById("tecService").value
  var cgv = document.getElementById("cgv").checked
- var resultUrl = document.getElementById("baseUrl").value +
+ var resultUrl = document.getElementById("baseUrlFas").value +
 	"?login=" + login +
 	"&mail=" + mail + 
 	"&genderCode=" + genderCode +
@@ -71,6 +73,8 @@ function toggleSections(value) {
 function replicateUrl(baseUrl){
 	document.getElementById("url").value = 
 		baseUrl + "?" + document.getElementById("url").value.split('?')[1]
+	document.getElementById("fullUrlViewer").value = 
+		baseUrl + "?" + document.getElementById("fullUrlViewer").value.split('?')[1]
 }
 
 window.addEventListener("load", function(event) {
