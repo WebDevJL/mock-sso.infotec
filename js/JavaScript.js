@@ -1,9 +1,18 @@
 ﻿function sendRequest() {
+  setSsoCookie()
   var url = document.getElementById("url").value
   document.write("Redirecting to the url in 2 seconds...")
   setTimeout(function() {
     window.location = url
   }, 2000)
+}
+
+function setSsoCookie(){
+  var userToken = document.getElementById("userToken").value
+  if(userToken){
+	document.cookie = "ssotoken=" + userToken
+    console.log(document.cookie)	
+  }
 }
 
 function hideFullUrl(hide){
