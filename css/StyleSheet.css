@@ -35,7 +35,7 @@ label {
 	text-align: right;
 }
 
-#atlas-ko-section input{
+#atlas-ko-section input:not(#cgv){
 	font: 1em sans-serif;
 	width: 40%;
 	box-sizing: border-box;
