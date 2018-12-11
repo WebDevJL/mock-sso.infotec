@@ -387,13 +387,13 @@
 			</div>
 			<div>
 				<label for="phone">Phone number</label>
-				<input id="phone" type="text" name="phone" placeholder="Enter a phone number (mask: 9999999999 or +32999999999 or 00329999999)"
+				<input id="phone" type="text" name="phone" placeholder="Enter a phone number (mask: 9999999999 or +32999999999 or 00329999999)" value="+32999999999"
 					required pattern="^[\+\*#0-9 ]+$"
 					onchange="setUrlWithUserData();appendSsin('ssinAtlasKo')" onkeypress="this.onchange()" oninput="this.onchange()" onpaste="this.onchange()">
 			</div>
 			<div>
 				<label for="tecService">TEC service</label>
-				<input id="tecService" type="text" name="tecService" list="tecServiceList"  placeholder="Enter a TEC service"
+				<input id="tecService" type="text" name="tecService" list="tecServiceList"  placeholder="Enter a TEC service" value="3"
 					required pattern="[0-9]"
 					onchange="setUrlWithUserData();appendSsin('ssinAtlasKo')" onkeypress="this.onchange()" oninput="this.onchange()" onpaste="this.onchange()">
 				<datalist id="tecServiceList">
