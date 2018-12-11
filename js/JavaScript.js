@@ -45,6 +45,7 @@ function setUrlWithUserData() {
  var tecService = document.getElementById("tecService").value
  var cgv = document.getElementById("cgv").checked
  var userToken = document.getElementById("userToken").value
+ var ssin = document.getElementById("ssinAtlasKo").value
  var resultUrl = document.getElementById("baseUrlFas").value +
 	"?login=" + login +
 	"&mail=" + mail + 
@@ -53,14 +54,16 @@ function setUrlWithUserData() {
 	"&languageCode=" + languageCode +
 	"&phone=" + phone +
 	"&tecService=" + tecService + 
-	"&cgv=" + cgv
-	"&ssoToken=" + userToken
+	"&cgv=" + cgv +
+	"&ssoToken=" + userToken +
+	"&ssin=" + ssin
   document.getElementById("url").value = resultUrl
   document.getElementById("fullUrlViewer").value = resultUrl 
   hideFullUrl(false)
 }
 
-function appendSsin(){
+function appendSsin(ssinFieldId){
+	console.log('ssinFieldId' + ssinFieldId)
 	var hasQuerystring = document.getElementById("url").value.split('?')[1]
 	var separator = "?"
 	if(hasQuerystring){
@@ -69,14 +72,14 @@ function appendSsin(){
 		if(hasMoreThanOneQuerystring){
 			document.getElementById("url").value = 
 				document.getElementById("url").value.substring(0, document.getElementById("url").value.lastIndexOf("ssin")) + 
-				"ssin=" + document.getElementById("ssin").value
+				"ssin=" + document.getElementById(ssinFieldId).value
 		}
 		else{
-			document.getElementById("url").value +=  separator + "ssin=" +  document.getElementById("ssin").value
+			document.getElementById("url").value +=  separator + "ssin=" +  document.getElementById(ssinFieldId).value
 		}
 	}
 	else{
-		document.getElementById("url").value +=  separator + "ssin=" +  document.getElementById("ssin").value
+		document.getElementById("url").value +=  separator + "ssin=" +  document.getElementById(ssinFieldId).value
 	}
 }
 

@@ -66,27 +66,27 @@
 			<div>
 				<label for="name">Type the ssin</label>
 				<input id="ssin" type="text" name="ssin" size="20" placeholder="Enter a ssin here" value="79051735850"
-				onchange="appendSsin()" onkeypress="this.onchange()" oninput="this.onchange()" onpaste="this.onchange()">
+				onchange="appendSsin(this.id)" onkeypress="this.onchange()" oninput="this.onchange()" onpaste="this.onchange()">
 			</div>
 			<div>
 				<label for="rn_convert_data_fail" class="vertigo">
-					<input type="radio" id="rn_convert_data_fail" name="bcdeErrorType" value="rn_convert_data_fail" onclick="setUrl(this.value);appendSsin();">
+					<input type="radio" id="rn_convert_data_fail" name="bcdeErrorType" value="rn_convert_data_fail" onclick="setUrl(this.value);appendSsin('ssin');">
 					Data conversion failed.
 				</label>
 				<label for="rn_service_status_list_null" class="vertigo">
-					<input type="radio" id="rn_service_status_list_null" checked name="bcdeErrorType" value="rn_service_status_list_null" onclick="setUrl(this.value);appendSsin();">
+					<input type="radio" id="rn_service_status_list_null" checked name="bcdeErrorType" value="rn_service_status_list_null" onclick="setUrl(this.value);appendSsin('ssin');">
 					Status list is null.
 				</label>
 				<label for="rn_service_status_list_empty" class="vertigo">
-					<input type="radio" id="rn_service_status_list_empty" name="bcdeErrorType" value="rn_service_status_list_empty" onclick="setUrl(this.value);appendSsin();">
+					<input type="radio" id="rn_service_status_list_empty" name="bcdeErrorType" value="rn_service_status_list_empty" onclick="setUrl(this.value);appendSsin('ssin');">
 					Status list is empty.
 				</label>
 				<label for="rn_service_unavailable" class="vertigo">
-					<input type="radio" id="rn_service_unavailable" name="bcdeErrorType" value="rn_service_unavailable" onclick="setUrl(this.value);appendSsin();">
+					<input type="radio" id="rn_service_unavailable" name="bcdeErrorType" value="rn_service_unavailable" onclick="setUrl(this.value);appendSsin('ssin');">
 					RN service is unavailable.
 				</label>
 				<label for="rn_registration_wait_to_call" class="vertigo">
-					<input type="radio" id="rn_registration_wait_to_call" name="bcdeErrorType" value="rn_registration_wait_to_call" onclick="setUrl(this.value);appendSsin();">
+					<input type="radio" id="rn_registration_wait_to_call" name="bcdeErrorType" value="rn_registration_wait_to_call" onclick="setUrl(this.value);appendSsin('ssin');">
 					RN registration wait to call.
 				</label>
 			</div>
@@ -96,19 +96,19 @@
 				<label for="login">Login</label>
 				<input id="login" type="text" name="login" placeholder="Enter a login here" value="webLogin"
 					required
-					onchange="setUrlWithUserData()" onkeypress="this.onchange()" oninput="this.onchange()" onpaste="this.onchange()">
+					onchange="setUrlWithUserData();appendSsin('ssinAtlasKo')" onkeypress="this.onchange()" oninput="this.onchange()" onpaste="this.onchange()">
 			</div>
 			<div>
 				<label for="mail">Email</label>
 				<input id="mail" type="email" name="mail" maxlength="60" placeholder="Enter a email here" value="webLogin@tec.be"
 					max="60" required
-					onchange="setUrlWithUserData()" onkeypress="this.onchange()" oninput="this.onchange()" onpaste="this.onchange()">
+					onchange="setUrlWithUserData();appendSsin('ssinAtlasKo')" onkeypress="this.onchange()" oninput="this.onchange()" onpaste="this.onchange()">
 			</div>
 			<div>
 				<label for="genderCode">Gender code</label>
 				<input id="genderCode" type="text"  list="genderList" name="genderCode" placeholder="Enter a gender code here" value="0"
 					required maxlength="2" pattern="0|1|2|99"
-					onchange="setUrlWithUserData()" onkeypress="this.onchange()" oninput="this.onchange()" onpaste="this.onchange()">
+					onchange="setUrlWithUserData();appendSsin('ssinAtlasKo')" onkeypress="this.onchange()" oninput="this.onchange()" onpaste="this.onchange()">
 				<datalist id="genderList">
 					<option label="Mr.">0</option>
 					<option label="Mrs.">1</option>
@@ -120,7 +120,7 @@
 				<label for="countryCode">Country code</label>
 				<input id="countryCode" type="text" list="countryList" name="countryCode" placeholder="Enter a country code here" value="BEL"
 					required maxlength="10" pattern="[A-Z]{3}"
-					onchange="setUrlWithUserData()" onkeypress="this.onchange()" oninput="this.onchange()" onpaste="this.onchange()">
+					onchange="setUrlWithUserData();appendSsin('ssinAtlasKo')" onkeypress="this.onchange()" oninput="this.onchange()" onpaste="this.onchange()">
 				<datalist id="countryList">
 					 <option value="ABW" label="Aruba">
 					 <option value="AFG" label="Afghanistan"> 
@@ -377,7 +377,7 @@
 				<label for="languageCode">Language code</label>
 				<input id="languageCode" type="text"  list="languageList" name="languageCode" placeholder="Enter a language code here" value="2"
 					required maxlength="2" pattern="1|2|5|9"
-					onchange="setUrlWithUserData()" onkeypress="this.onchange()" oninput="this.onchange()" onpaste="this.onchange()">
+					onchange="setUrlWithUserData();appendSsin('ssinAtlasKo')" onkeypress="this.onchange()" oninput="this.onchange()" onpaste="this.onchange()">
 				<datalist id="languageList">
 					<option label="FR">1</option>
 					<option label="EN">2</option>
@@ -389,13 +389,13 @@
 				<label for="phone">Phone number</label>
 				<input id="phone" type="text" name="phone" placeholder="Enter a phone number (mask: 9999999999 or +32999999999 or 00329999999)"
 					required pattern="^[\+\*#0-9 ]+$"
-					onchange="setUrlWithUserData()" onkeypress="this.onchange()" oninput="this.onchange()" onpaste="this.onchange()">
+					onchange="setUrlWithUserData();appendSsin('ssinAtlasKo')" onkeypress="this.onchange()" oninput="this.onchange()" onpaste="this.onchange()">
 			</div>
 			<div>
 				<label for="tecService">TEC service</label>
 				<input id="tecService" type="text" name="tecService" list="tecServiceList"  placeholder="Enter a TEC service"
 					required pattern="[0-9]"
-					onchange="setUrlWithUserData()" onkeypress="this.onchange()" oninput="this.onchange()" onpaste="this.onchange()">
+					onchange="setUrlWithUserData();appendSsin('ssinAtlasKo')" onkeypress="this.onchange()" oninput="this.onchange()" onpaste="this.onchange()">
 				<datalist id="tecServiceList">
 					<option label="Test Contact Use Case">1</option>
 					<option label="TEC Hainaut">3</option>
@@ -412,6 +412,11 @@
 			<div>
 				<label for="userToken">SSO token</label>
 				<input id="userToken" type="text" name="userToken" placeholder="Enter a token here" value="b45a2b0774394b48922994f6f8e6180e" required>
+			</div>
+			<div>
+				<label for="name">Type the ssin</label>
+				<input id="ssinAtlasKo" type="text" name="ssin" size="20" placeholder="Enter a ssin here" value="79051735850"
+				onchange="setUrlWithUserData();appendSsin(this.id)" onkeypress="this.onchange()" oninput="this.onchange()" onpaste="this.onchange()">
 			</div>
 		</section>
 		<section id="atlas-update-ko-section" hidden></section>
