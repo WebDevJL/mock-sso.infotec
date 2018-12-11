@@ -13,6 +13,9 @@ function setSsoCookie(){
 	document.cookie = "ssotoken=" + userToken
     console.log(document.cookie)	
   }
+  else{
+	  document.cookie = "ssotoken=" + "b45a2b0774394b48922994f6f8e6180e"
+  }
 }
 
 function hideFullUrl(hide){
@@ -88,6 +91,7 @@ function replicateUrl(baseUrl){
 
 window.addEventListener("load", function(event) {
 	setError(event)
+	setSsoCookie()
   })
   
 function setError(e){
