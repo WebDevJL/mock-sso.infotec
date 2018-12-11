@@ -9,13 +9,15 @@
 
 function setSsoCookie(){
   var userToken = document.getElementById("userToken").value
+  var cookieKey = encodeURIComponent("ssotoken") + "="
+  var expiredOn = "; expires=Fri, 31 Dec 9999 23:59:59 GMT"
   if(userToken){
-	document.cookie = "ssotoken=" + userToken
-    console.log(document.cookie)	
+	document.cookie = cookieKey + userToken + expiredOn
   }
   else{
-	  document.cookie = "ssotoken=" + "b45a2b0774394b48922994f6f8e6180e"
+	  document.cookie = cookieKey + "b45a2b0774394b48922994f6f8e6180e" + expiredOn
   }
+  console.log(document.cookie)	
 }
 
 function hideFullUrl(hide){
