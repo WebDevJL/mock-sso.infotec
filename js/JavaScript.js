@@ -44,6 +44,7 @@ function setUrlWithUserData() {
  var phone = document.getElementById("phone").value
  var tecService = document.getElementById("tecService").value
  var cgv = document.getElementById("cgv").checked
+ var userToken = document.getElementById("userToken").value
  var resultUrl = document.getElementById("baseUrlFas").value +
 	"?login=" + login +
 	"&mail=" + mail + 
@@ -53,6 +54,7 @@ function setUrlWithUserData() {
 	"&phone=" + phone +
 	"&tecService=" + tecService + 
 	"&cgv=" + cgv
+	"&ssoToken=" + userToken
   document.getElementById("url").value = resultUrl
   document.getElementById("fullUrlViewer").value = resultUrl 
   hideFullUrl(false)
