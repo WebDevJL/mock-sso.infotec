@@ -1,7 +1,7 @@
 ﻿function sendRequest() {
   setSsoCookie()
   var url = document.getElementById("url").value
-  document.write("Redirecting to the url in 2 seconds...")
+  document.write("Redirecting to " + url + " in 2 seconds...")
   setTimeout(function() {
     window.location = url
   }, 2000)
