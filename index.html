@@ -25,15 +25,15 @@
 			<label>Select the context</label>
 			<label for="fas-ko">
 				<input type="radio" id="fas-ko" checked name="context" value="fas-ko" onclick="toggleSections(this.value);hideFullUrl(true)">
-				FAS K.O.
+				FAS
 			</label>
 			<label for="bcde-ko">
 				<input type="radio" id="bcde-ko" name="context" value="bcde-ko" onclick="toggleSections(this.value);hideFullUrl(true)">
-				BCDE K.O.
+				BCDE
 			</label>
 			<label for="atlas-ko">
 				<input type="radio" id="atlas-ko" name="context" value="atlas-ko" onclick="toggleSections(this.value);setUrlWithUserData()">
-				ATLAS K.O.
+				ATLAS
 			</label>
 		</section>
 		<section id="fas-ko-section">
@@ -58,12 +58,17 @@
 			</div>
 		</section>
 		<section id="bcde-ko-section" hidden>
-			<p>Select the RN service error to simulate</p>
 			<div>
 				<label for="name">Type the ssin</label>
 				<input id="ssin" type="text" name="ssin" size="20" placeholder="Enter a ssin here" value="79051735850"
 				onchange="appendSsin(this.id)" onkeypress="this.onchange()" oninput="this.onchange()" onpaste="this.onchange()">
 			</div>
+			<p>Existing behavior checking</p>
+				<label for="rn_nominal_case" class="vertigo">
+					<input type="radio" id="rn_nominal_case" name="bcdeErrorType" value="rn_nominal_case" onclick="setUrl(this.value, false);appendSsin('ssin');">
+					Trigger a nominal call.
+				</label>
+			<p>Select the RN service error to simulate</p>
 			<div>
 				<label for="rn_convert_data_fail" class="vertigo">
 					<input type="radio" id="rn_convert_data_fail" name="bcdeErrorType" value="rn_convert_data_fail" onclick="setUrl(this.value);appendSsin('ssin');">

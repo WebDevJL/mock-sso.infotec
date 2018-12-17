@@ -29,9 +29,15 @@ function hideFullUrl(hide){
 	document.getElementById("baseUrl-section").hidden = !hide
 }
 
-function setUrl(value) {
-  document.getElementById("url").value =
-    document.getElementById("baseUrl").value + "?simulate=" + value
+function setUrl(value, isSimulation = true) {
+	if(isSimulation){
+		document.getElementById("url").value =
+			document.getElementById("baseUrl").value + "?simulate=" + value
+	}
+	else{
+		document.getElementById("url").value =
+			document.getElementById("baseUrl").value
+	}
   hideFullUrl(true)
 }
 
