@@ -115,6 +115,10 @@ function setError(e){
   setUrl(radioElement.value)
   var closestSection = radioElement.closest("section")
   if(!closestSection) return
+  if(closestSection.id === 'bcde-ko-section')
+  {
+	  appendSsin('ssin')
+  }
   var selectedSectionId = closestSection.id.replace('-section','')
   toggleSections(selectedSectionId)
   var switchElement = document.getElementById(selectedSectionId)
