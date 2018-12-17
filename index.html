@@ -35,10 +35,6 @@
 				<input type="radio" id="atlas-ko" name="context" value="atlas-ko" onclick="toggleSections(this.value);setUrlWithUserData()">
 				ATLAS K.O.
 			</label>
-			<label for="atlas-update-ko">
-				<input type="radio" id="atlas-update-ko" name="context" value="atlas-update-ko" onclick="toggleSections(this.value)">
-				ATLAS Update K.O.
-			</label>
 		</section>
 		<section id="fas-ko-section">
 			<p>Select the error to simulate</p>
@@ -419,7 +415,6 @@
 				onchange="setUrlWithUserData();appendSsin(this.id)" onkeypress="this.onchange()" oninput="this.onchange()" onpaste="this.onchange()">
 			</div>
 		</section>
-		<section id="atlas-update-ko-section" hidden></section>
 		<section id="request-section">
 			<div>
 				<label for="name">Final request url</label>

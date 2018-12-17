@@ -112,6 +112,7 @@ function setError(e){
   var radioElement = document.getElementById(errorValue)
   if(!radioElement) return
   radioElement.checked = true
+  setUrl(radioElement.value)
   var closestSection = radioElement.closest("section")
   if(!closestSection) return
   var selectedSectionId = closestSection.id.replace('-section','')
