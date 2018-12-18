@@ -111,6 +111,7 @@ window.addEventListener("load", function(event) {
   })
   
 function setError(e){
+  // the query string result pattern is ?error={errorValue}
   var error = e.target.baseURI.split('?')[1]
   if(!error) return
   var errorValue = error.split('=')[1]
@@ -130,4 +131,14 @@ function setError(e){
   var switchElement = document.getElementById(selectedSectionId)
   if(!switchElement) return
   switchElement.checked = true
+}
+
+function setUrlFromContext(value){
+	var section = document.getElementById(value + "-section")
+	var options = section.querySelectorAll('input[type="radio"]')
+	options.forEach(function(option) {
+		if(option.checked){
+			option.click()
+		}
+	})
 }
