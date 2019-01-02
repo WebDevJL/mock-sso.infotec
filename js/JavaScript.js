@@ -111,7 +111,7 @@ window.addEventListener("load", function(event) {
   })
   
 function setError(e){
-  // the query string result pattern is ?error={errorValue}
+  // the query string result pattern is ?error_atlas={errorValue}
   var error = e.target.baseURI.split('?')[1]
   if(!error) return
   var errorValue = error.split('=')[1]
