@@ -180,9 +180,9 @@ if (postDatabtn != undefined) {
     var url = document.getElementById("url").value;
     console.log("URL", url);
     fetch(url, {
+      mode: "no-cors",
       method: "POST",
       headers: {
-        Mode: "no-cors",
         Accept: "application/json",
         "Content-type": "application/json"
       },
