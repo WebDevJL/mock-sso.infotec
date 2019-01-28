@@ -182,7 +182,7 @@ if (postDatabtn != undefined) {
     fetch(url, {
       method: "POST",
       headers: {
-        "Access-Control-Allow-Origin": "no-cors",
+        Mode: "no-cors",
         Accept: "application/json",
         "Content-type": "application/json"
       },
