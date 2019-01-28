@@ -183,10 +183,17 @@ if (postDatabtn != undefined) {
       mode: "no-cors",
       method: "POST",
       headers: {
+        "Access-Control-Allow-Origin": "no-cors",
         Accept: "application/json",
         "Content-type": "application/json"
       },
       body: JSON.stringify(viewModel)
-    });
+    })
+      .then(response => {
+        console.log("Response", response);
+      })
+      .catch(err => {
+        console.log("Error", err);
+      });
   });
 }
