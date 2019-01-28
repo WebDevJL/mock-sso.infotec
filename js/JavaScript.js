@@ -2,9 +2,9 @@ function sendRequest() {
   setSsoCookie();
   var url = document.getElementById("url").value;
   document.write("Redirecting to " + url + " in 2 seconds...");
-  setTimeout(function() {
+  /*setTimeout(function() {
     window.location = url;
-  }, 2000);
+  }, 2000);*/
 }
 
 function setSsoCookie() {
@@ -165,32 +165,42 @@ var postDatabtn = document.querySelector("#postdata");
 if (postDatabtn != undefined) {
   postDatabtn.addEventListener("click", event => {
     var viewModel = {
-      IsContextRegistration: true,
-      LoginWeb: "",
-      Email: "",
-      CivilityCode: 99,
-      CountryCode: 0,
-      LanguageCode: 1,
-      LandlinePhoneNumber: "",
-      MobileNumberNumber: "",
-      CustomerServiceCode: 1,
-      AcceptedTermsOfSales: 0
+      IsContextRegistration: true, //TODO: read the checkbox input
+      LoginWeb: "", //TODO: read the input
+      Email: "", //TODO: read the checkbox input
+      CivilityCode: 2, //TODO: read the checkbox input
+      CountryCode: 15, //TODO: read the checkbox input
+      LanguageCode: 5, //TODO: read the checkbox input
+      LandlinePhoneNumber: "+32123456789", //TODO: read the checkbox input
+      MobileNumberNumber: "", //TODO: read the checkbox input
+      CustomerServiceCode: 7, //TODO: read the checkbox input
+      AcceptedTermsOfSales: true //TODO: read the checkbox input
     };
     console.log("view model", viewModel);
-    var url = document.getElementById("url").value;
+    //TODO: Check why baseUrl value is not the url below when you switch to the Atlas section.
+    var url = "http://localhost:1034/Mobile/Registration/VerifyNewUser";
     console.log("URL", url);
-    fetch(url, {
-      mode: "no-cors",
+    var params = {
       method: "POST",
-      headers: {
-        "Access-Control-Allow-Origin": "no-cors",
-        Accept: "application/json",
-        "Content-type": "application/json"
-      },
-      body: JSON.stringify(viewModel)
-    })
+      "content-type": "application/json",
+      body: viewModel
+    };
+    //TODO: the viewModel doesn't seem to be sent with the props values...
+    //However, using Advanced Rest client Chrome application, the values are passed through to the MVC App...
+    //This mock client may need to be fixed!
+    const request = new Request(url, params);
+    fetch(request, params)
       .then(response => {
-        console.log("Response", response);
+        if (response.ok) {
+          const jsonData = response.json();
+          console.log(jsonData);
+          return jsonData;
+        }
+        console.log("Fetch failed response", response);
+      })
+      .then(data => {
+        console.log("FAS Request Url", data);
+        window.location = data.FasRequestUrl;
       })
       .catch(err => {
         console.log("Error", err);
