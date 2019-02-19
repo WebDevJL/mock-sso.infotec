@@ -200,7 +200,7 @@ if (postDatabtn != undefined) {
       })
       .then(data => {
         console.log("FAS Request Url", data);
-        window.location = data.FasRequestUrl;
+        window.location = data.RedirectionUrl;
       })
       .catch(err => {
         console.log("Error", err);
