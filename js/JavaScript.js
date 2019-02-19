@@ -169,7 +169,7 @@ if (postDatabtn != undefined) {
       LoginWeb: "", //TODO: read the input
       Email: "", //TODO: read the checkbox input
       CivilityCode: 2, //TODO: read the checkbox input
-      CountryCode: 15, //TODO: read the checkbox input
+      CountryCode: "BEL", //TODO: read the checkbox input
       LanguageCode: 5, //TODO: read the checkbox input
       LandlinePhoneNumber: "+32123456789", //TODO: read the checkbox input
       MobileNumberNumber: "", //TODO: read the checkbox input
