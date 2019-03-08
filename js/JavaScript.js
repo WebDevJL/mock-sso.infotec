@@ -178,7 +178,7 @@ if (postDatabtn != undefined) {
     };
     console.log("view model", viewModel);
     //TODO: Check why baseUrl value is not the url below when you switch to the Atlas section.
-    var url = "http://localhost:1034/Mobile/Registration/VerifyNewUser";
+    var url = document.getElementById("url").value;
     console.log("URL", url);
     var params = {
       method: "POST",
