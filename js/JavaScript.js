@@ -178,7 +178,7 @@ if (postDatabtn != undefined) {
     };
     console.log("view model", viewModel);
     //TODO: Check why baseUrl value is not the url below when you switch to the Atlas section.
-    var url = document.getElementById("url").value;
+    var url = document.getElementById("baseUrlFas").value;
     console.log("URL", url);
     var params = {
       method: "POST",
