@@ -15,7 +15,7 @@
 		</section>
 		<section id="baseUrl-section">
 			<label for="baseUrl">Type your base url</label>
-			<input id="baseUrl" type="text" name="baseUrl" size="100" placeholder="Enter a base Url here" value="http://eshop.infotec.be/Registration/SimulateFasResponse" onchange="replicateUrl(this.value)" onkeypress="this.onchange()" oninput="this.onchange()" onpaste="this.onchange()">
+			<input disabled id="baseUrl" type="text" name="baseUrl" size="100" placeholder="Enter a base Url here" value="http://eshop.infotec.be/Registration/SimulateFasResponse" onchange="replicateUrl(this.value)" onkeypress="this.onchange()" oninput="this.onchange()" onpaste="this.onchange()">
 		</section>
 		<section id="baseUrlFas-section" hidden>
 			<label for="name">Type your base url with FAS</label>
@@ -24,11 +24,11 @@
 		<section id="switch">
 			<label>Select the context</label>
 			<label for="fas-ko">
-				<input type="radio" id="fas-ko" checked name="context" value="fas-ko" onclick="toggleSections(this.value);hideFullUrl(true);setUrlFromContext(value)">
+				<input disabled type="radio" id="fas-ko" checked name="context" value="fas-ko" onclick="toggleSections(this.value);hideFullUrl(true);setUrlFromContext(value)">
 				FAS
 			</label>
 			<label for="bcde-ko">
-				<input type="radio" id="bcde-ko" name="context" value="bcde-ko" onclick="toggleSections(this.value);hideFullUrl(true);setUrlFromContext(value)">
+				<input disabled type="radio" id="bcde-ko" name="context" value="bcde-ko" onclick="toggleSections(this.value);hideFullUrl(true);setUrlFromContext(value)">
 				RN and BCDE
 			</label>
 			<label for="atlas-ko">
