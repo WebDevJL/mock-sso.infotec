@@ -1,2 +1,2 @@
 # mock-sso.infotec
-The site facking Infotec.be
+The site facking Infotec.be QAS
