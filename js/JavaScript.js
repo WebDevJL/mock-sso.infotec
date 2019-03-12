@@ -26,7 +26,8 @@ function setSsoCookie() {
 function hideFullUrl(hide) {
   document.getElementById("fullUrlSection").hidden = hide;
   document.getElementById("baseUrlFas-section").hidden = hide;
-  document.getElementById("baseUrl-section").hidden = !hide;
+  document.getElementById("baseUrl-section").hidden = hide;
+  document.getElementById("atlas-ko-section").hidden = !hide;
 }
 
 function setUrl(value, isSimulation = true) {
