@@ -161,7 +161,7 @@ function setUrlFromContext(value) {
   });
 }
 
-$("#postdata").click(function(e) {
+/*$("#postdata").click(function(e) {
   var viewModel = {
     IsContextRegistration: true, //TODO: read the checkbox input
     LoginWeb: "", //TODO: read the input
@@ -187,7 +187,7 @@ $("#postdata").click(function(e) {
     cache: false,
     async: true,
     success: function (response) {
-      console.log("Sucess", response);
+      console.log("Success", response);
     },
     complete: function (response) {
       console.log("Complete", response);
@@ -196,10 +196,10 @@ $("#postdata").click(function(e) {
       console.error("Error", response);
     }
   });  
-});
+});*/
 
 var postDatabtn = document.querySelector("#postdata");
-/*if (postDatabtn != undefined) {
+if (postDatabtn != undefined) {
   postDatabtn.addEventListener("click", event => {
     var viewModel = {
       IsContextRegistration: true, //TODO: read the checkbox input
@@ -243,4 +243,4 @@ var postDatabtn = document.querySelector("#postdata");
         console.log("Error", err);
       });
   });
-}*/
+}
