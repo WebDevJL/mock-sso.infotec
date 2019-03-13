@@ -161,7 +161,7 @@ function setUrlFromContext(value) {
   });
 }
 
-/*$("#postdata").click(function(e) {
+$("#postdata").click(function(e) {
   var viewModel = {
     IsContextRegistration: true, //TODO: read the checkbox input
     LoginWeb: "", //TODO: read the input
@@ -181,6 +181,7 @@ function setUrlFromContext(value) {
   $.ajax({
     type: "POST",
     contentType: "application/json; charset=utf-8",
+    crossDomain: true,
     url: url,
     data: viewModel,
     dataType: "json",
@@ -196,9 +197,9 @@ function setUrlFromContext(value) {
       console.error("Error", response);
     }
   });  
-});*/
+});
 
-var postDatabtn = document.querySelector("#postdata");
+/*var postDatabtn = document.querySelector("#postdata");
 if (postDatabtn != undefined) {
   postDatabtn.addEventListener("click", event => {
     var viewModel = {
@@ -243,4 +244,4 @@ if (postDatabtn != undefined) {
         console.log("Error", err);
       });
   });
-}
+}*/
