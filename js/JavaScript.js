@@ -181,10 +181,9 @@ $("#postdata").click(function(e) {
   $.ajax({
     type: "POST",
     contentType: "application/json; charset=utf-8",
-    crossDomain: true,
     url: url,
     data: viewModel,
-    dataType: "json",
+    dataType: 'jsonp',
     cache: false,
     async: true,
     success: function (response) {
