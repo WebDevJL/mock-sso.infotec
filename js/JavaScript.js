@@ -161,8 +161,45 @@ function setUrlFromContext(value) {
   });
 }
 
+$("#postdata").click(function(e) {
+  var viewModel = {
+    IsContextRegistration: true, //TODO: read the checkbox input
+    LoginWeb: "", //TODO: read the input
+    Email: "", //TODO: read the checkbox input
+    CivilityCode: 2, //TODO: read the checkbox input
+    CountryCode: "BEL", //TODO: read the checkbox input
+    LanguageCode: 5, //TODO: read the checkbox input
+    LandlinePhoneNumber: "+32123456789", //TODO: read the checkbox input
+    MobileNumberNumber: "", //TODO: read the checkbox input
+    CustomerServiceCode: 7, //TODO: read the checkbox input
+    AcceptedTermsOfSales: true //TODO: read the checkbox input
+  };
+  console.log("view model", viewModel);
+  //TODO: Check why baseUrl value is not the url below when you switch to the Atlas section.
+  var url = document.getElementById("baseUrlFas").value;
+  console.log("URL", url);
+  $.ajax({
+    type: "POST",
+    contentType: "application/json; charset=utf-8",
+    url: url,
+    data: viewModel,
+    dataType: "json",
+    cache: false,
+    async: true,
+    success: function (response) {
+      console.log("Sucess", response);
+    },
+    complete: function (response) {
+      console.log("Complete", response);
+    },
+    error: function (response) {
+      console.error("Error", response);
+    }
+  });  
+});
+
 var postDatabtn = document.querySelector("#postdata");
-if (postDatabtn != undefined) {
+/*if (postDatabtn != undefined) {
   postDatabtn.addEventListener("click", event => {
     var viewModel = {
       IsContextRegistration: true, //TODO: read the checkbox input
@@ -206,4 +243,4 @@ if (postDatabtn != undefined) {
         console.log("Error", err);
       });
   });
-}
+}*/
