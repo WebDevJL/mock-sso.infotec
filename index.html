@@ -93,6 +93,9 @@
 		</section>
 		<section id="atlas-ko-section" hidden>
 			<div>
+				<input id="postdata" type="submit" name="postdata" value="Post data">
+			</div>
+			<div>
 				<label for="infotecContext">Registration (checked) or E-SHOP Activation (unchecked)</label>
 				<input id="infotecContext" type="checkbox" name="infotecContext" checked />
 			</div>
@@ -407,9 +410,6 @@
 			<div>
 				<label for="name">Type the ssin</label>
 				<input id="ssinAtlasKo" type="text" name="ssin" size="20" placeholder="Enter a ssin here" value="79051735850" onchange="setUrlWithUserData();appendSsin(this.id)" onkeypress="this.onchange()" oninput="this.onchange()" onpaste="this.onchange()">
-			</div>
-			<div>
-				<input id="postdata" type="submit" name="postdata" value="Post data">
 			</div>
 		</section>
 		<section id="request-section">
