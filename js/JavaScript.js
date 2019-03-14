@@ -232,9 +232,7 @@ if (postDatabtn != undefined) {
       "content-type": "application/json",
       body: JSON.stringify(viewModel)
     };
-    //TODO: the viewModel doesn't seem to be sent with the props values...
-    //However, using Advanced Rest client Chrome application, the values are passed through to the MVC App...
-    //This mock client may need to be fixed!
+    
     const request = new Request(url, params);
     fetch(request, params)
       .then(response => {
