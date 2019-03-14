@@ -213,25 +213,24 @@ var postDatabtn = document.querySelector("#postdata");
 if (postDatabtn != undefined) {
   postDatabtn.addEventListener("click", event => {
     var viewModel = {
-      IsContextRegistration: getContextRegistration(),
-      LoginWeb: getLogin(),
-      Email: getMail(),
-      CivilityCode: getGenderCode(),
-      CountryCode: getCountryCode(),
-      LanguageCode: getLanguageCode(),
-      LandlinePhoneNumber: getPhone(),
-      MobileNumberNumber: getMobile(),
-      CustomerServiceCode: getTecService(),
-      AcceptedTermsOfSales: getCgv()
+      "IsContextRegistration": getContextRegistration(),
+      "LoginWeb": getLogin(),
+      "Email": getMail(),
+      "CivilityCode": getGenderCode(),
+      "CountryCode": getCountryCode(),
+      "LanguageCode": getLanguageCode(),
+      "LandlinePhoneNumber": getPhone(),
+      "MobileNumberNumber": getMobile(),
+      "CustomerServiceCode": getTecService(),
+      "AcceptedTermsOfSales": getCgv()
     };
     console.log("view model", viewModel);
-    //TODO: Check why baseUrl value is not the url below when you switch to the Atlas section.
     var url = document.getElementById("baseUrlFas").value;
     console.log("URL", url);
     var params = {
       method: "POST",
       "content-type": "application/json",
-      body: viewModel
+      body: JSON.stringify(viewModel)
     };
     //TODO: the viewModel doesn't seem to be sent with the props values...
     //However, using Advanced Rest client Chrome application, the values are passed through to the MVC App...
