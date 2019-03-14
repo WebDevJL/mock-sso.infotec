@@ -206,7 +206,7 @@ function setUrlFromContext(value) {
 }
 
 function getContextRegistration(){
-	return return document.getElementById("infotecContext").value;
+	return document.getElementById("infotecContext").value;
 }
 
 var postDatabtn = document.querySelector("#postdata");
