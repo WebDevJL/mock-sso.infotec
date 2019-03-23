@@ -9,7 +9,7 @@ function sendRequest() {
 
 function setSsoCookie() {
   var userToken = document.getElementById("userToken").value;
-  var cookieKey = encodeURIComponent("ssotoken") + "=";
+  var cookieKey = encodeURIComponent("usertoken") + "=";
   var expiredOn = "; expires=Fri, 31 Dec 9999 23:59:59 GMT";
   var cookieSuffix = expiredOn;
   var domain = ";domain=etude.tr";
