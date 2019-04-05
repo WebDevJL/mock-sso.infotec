@@ -9,7 +9,7 @@ function sendRequest() {
 
 function setSsoCookie() {
   var userToken = document.getElementById("userToken").value;
-  var cookieKey = encodeURIComponent("ssotoken") + "=";
+  var cookieKey = encodeURIComponent("usertoken") + "=";
   var expiredOn = "; expires=Fri, 31 Dec 9999 23:59:59 GMT";
   var cookieSuffix = expiredOn;
   var domain = ";domain=etude.tr";
@@ -41,17 +41,61 @@ function setUrl(value, isSimulation = true) {
   hideFullUrl(true);
 }
 
+function getLogin(){
+	return document.getElementById("login").value;
+}
+
+function getMail(){
+	return document.getElementById("mail").value;
+}
+
+function getGenderCode(){
+	return document.getElementById("genderCode").value;
+}
+
+function getCountryCode(){
+	return document.getElementById("countryCode").value;
+}
+
+function getLanguageCode(){
+	return document.getElementById("languageCode").value;
+}
+
+function getPhone(){
+	return document.getElementById("phone").value;
+}
+
+function getMobile(){
+	return document.getElementById("mobile").value;
+}
+
+function getTecService(){
+	return document.getElementById("tecService").value;
+}
+
+function getCgv(){
+	return document.getElementById("cgv").checked;
+}
+
+function getUserToken(){
+	return document.getElementById("userToken").value;
+}
+
+function getSsin(){
+	return document.getElementById("ssinAtlasKo").value;
+}
+
 function setUrlWithUserData() {
-  var login = document.getElementById("login").value;
-  var mail = document.getElementById("mail").value;
-  var genderCode = document.getElementById("genderCode").value;
-  var countryCode = document.getElementById("countryCode").value;
-  var languageCode = document.getElementById("languageCode").value;
-  var phone = document.getElementById("phone").value;
-  var tecService = document.getElementById("tecService").value;
-  var cgv = document.getElementById("cgv").checked;
-  var userToken = document.getElementById("userToken").value;
-  var ssin = document.getElementById("ssinAtlasKo").value;
+  var login = getLogin()
+  var mail = getMail()
+  var genderCode = getGenderCode()
+  var countryCode = getCountryCode()
+  var languageCode = getLanguageCode()
+  var phone = getPhone()
+  var tecService = getTecService()
+  var cgv = getCgv()
+  var userToken = getUserToken()
+  var ssin = getSsin()
   var resultUrl =
     document.getElementById("baseUrlFas").value +
     "?login=" +
@@ -161,33 +205,34 @@ function setUrlFromContext(value) {
   });
 }
 
+function getContextRegistration(){
+	return document.getElementById("infotecContext").checked;
+}
+
 var postDatabtn = document.querySelector("#postdata");
 if (postDatabtn != undefined) {
   postDatabtn.addEventListener("click", event => {
     var viewModel = {
-      IsContextRegistration: true, //TODO: read the checkbox input
-      LoginWeb: "", //TODO: read the input
-      Email: "", //TODO: read the checkbox input
-      CivilityCode: 2, //TODO: read the checkbox input
-      CountryCode: "BEL", //TODO: read the checkbox input
-      LanguageCode: 5, //TODO: read the checkbox input
-      LandlinePhoneNumber: "+32123456789", //TODO: read the checkbox input
-      MobileNumberNumber: "", //TODO: read the checkbox input
-      CustomerServiceCode: 7, //TODO: read the checkbox input
-      AcceptedTermsOfSales: true //TODO: read the checkbox input
+      "IsContextRegistration": getContextRegistration(),
+      "LoginWeb": getLogin(),
+      "Email": getMail(),
+      "CivilityCode": getGenderCode(),
+      "CountryCode": getCountryCode(),
+      "LanguageCode": getLanguageCode(),
+      "LandlinePhoneNumber": getPhone(),
+      "MobileNumberNumber": getMobile(),
+      "CustomerServiceCode": getTecService(),
+      "AcceptedTermsOfSales": getCgv()
     };
     console.log("view model", viewModel);
-    //TODO: Check why baseUrl value is not the url below when you switch to the Atlas section.
     var url = document.getElementById("baseUrlFas").value;
     console.log("URL", url);
     var params = {
       method: "POST",
       "content-type": "application/json",
-      body: viewModel
+      body: JSON.stringify(viewModel)
     };
-    //TODO: the viewModel doesn't seem to be sent with the props values...
-    //However, using Advanced Rest client Chrome application, the values are passed through to the MVC App...
-    //This mock client may need to be fixed!
+    
     const request = new Request(url, params);
     fetch(request, params)
       .then(response => {
