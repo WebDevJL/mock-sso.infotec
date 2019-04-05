@@ -16,13 +16,6 @@ function handleError(e) {
   toggleSections(errorValue)
 }
 
-function readMe(mimi) {
-  var miaou = 'Miaou!!! '
-  if (mimi) miaou += mimi
-  alert(miaou)
-}
-
 window.addEventListener("load", function(event) {
   handleError(event)
-  readMe()
 });
