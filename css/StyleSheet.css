@@ -1,43 +1,16 @@
-﻿html {
-    font-family: sans-serif;
-	font-size:1vw;
+﻿label {
+  display: block;
+}
+#atlas-section {
+  width: 100vw;
+}
+.grid-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
 }
 
-label {
-    margin-right: 15px;
-    line-height: 32px;
-}
-
-#content{
-	max-width: 970px;
-    margin: auto;
-}
-
-.vertigo{
-	display:block;
-}
-
-#atlas-ko-section{
-	margin: 0 auto;
-	width: 700px;
-	padding: 1em;
-	/*border: 1px solid #CCC;*/
-	border-radius: 1em;
-}
-
-#atlas-ko-section div + div {
-  margin-top: 1em;
-}
-
-#atlas-ko-section label{
-	display: inline-block;
-	width: 30%;
-	text-align: right;
-}
-
-#atlas-ko-section input:not(#cgv){
-	font: 1em sans-serif;
-	width: 40%;
-	box-sizing: border-box;
-	border: 1px solid #999;
+#postdata {
+  margin-top: 2em;
+  text-align: center;
 }
