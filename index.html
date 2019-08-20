@@ -47,7 +47,6 @@
 				<option value="rn_service_status_list_empty">Status list is empty</option>
 				<option value="rn_service_unavailable">RN service is unavailable</option>
 				<option value="rn_registration_wait_to_call">RN registration wait to call</option>
-				<option value="rn_nominal_case">Trigger a nominal call</option>
 				<!-- Add option for errors not present but in EIS786 §5.7.2 -->
 			</datalist>
 		</section>
@@ -79,14 +78,14 @@
 					<label for="genderCode">
 						Gender code
 					</label>
-					<input id="genderCode" type="text" list="genderList" name="genderCode" placeholder="Enter a gender code here" value="0" required maxlength="2" pattern="0|1|2|99" />
+					<input id="genderCode" type="text" list="genderList" name="genderCode" placeholder="Enter a gender code here" value="0" required maxlength="2"/>
 
 					<datalist id="genderList">
 						<option label="Mr.">0</option>
 						<option label="Mrs.">1</option>
 						<option label="Miss">2</option>
 						<option label="Undefined">99</option>
-						<option label="Bad value">100</option>
+						<option label="Bad value">10</option>
 					</datalist>
 				</article>
 				<article>

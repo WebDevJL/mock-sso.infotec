@@ -12,6 +12,9 @@ function processPostReponse(data) {
 	var redirectionUrl = data.RedirectionUrl.toLowerCase().indexOf("infotec") > 0 ?
 		`${data.RedirectionUrl}&ssotoken=${getUserToken()}` :
 		data.RedirectionUrl;
+	if (redirectionUrl.toLowerCase().indexOf("&") > 0 && redirectionUrl.toLowerCase().indexOf("?") == -1) {
+		redirectionUrl = redirectionUrl.replace("&", "?");
+	}
 	window.location = redirectionUrl;
 }
 
@@ -30,7 +33,7 @@ if (postDatabtn != undefined) {
       CountryCode: getCountryCode(),
       LanguageCode: getLanguageCode(),
       LandlinePhoneNumber: getPhone(),
-      MobileNumberNumber: getMobile(),
+      MobilePhoneNumber: getMobile(),
       CustomerServiceCode: getTecService(),
       AcceptedTermsOfSales: getCgv(),
       Ssin: getSsin(),
@@ -46,14 +49,20 @@ if (postDatabtn != undefined) {
       throw new Error(errorMessage);
     }
     var params = {
-      method: "POST",
-      "content-type": "application/json",
-      body: JSON.stringify(viewModel)
+      method: 'POST',
+      'content-type': 'application/json',
+      body: JSON.stringify(viewModel),
+      redirect: 'follow'
     };
 
     const request = new Request(url, params);
     fetch(request, params)
       .then(response => {
+        console.log("Fetch response", response)
+	if (response.redirected) {
+	  alert("what is the redirection?");
+	  window.location = response.url;
+	}
         if (response.ok) {
           const jsonData = response.json();
           console.log(jsonData);
