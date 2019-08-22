@@ -37,7 +37,8 @@ if (postDatabtn != undefined) {
       CustomerServiceCode: getTecService(),
       AcceptedTermsOfSales: getCgv(),
       Ssin: getSsin(),
-      Simulate: getSimulateError()
+      SimulateError: getSimulateError(),
+      SkipRnCallLimitation: getSkipRnLimitsFlag()
     };
     console.log("view model", viewModel);
     var url = getFullUri();

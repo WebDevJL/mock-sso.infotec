@@ -55,7 +55,10 @@ function getSsin() {
 function getModifyEshopFlag() {
   return document.getElementById("modifyEshop").checked;
 }
-function getEnvironment() {
+function getSkipRnLimitsFlag() {
+  return document.getElementById("skipRnLimits").checked;
+}
+  function getEnvironment() {
   return document.getElementById("environment").value;
 }
 function getPage() {
