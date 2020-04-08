@@ -1,6 +1,6 @@
 function setSsoCookie() {
   var userToken = document.getElementById("UserToken").value;
-  var cookieKey = encodeURIComponent("Usertoken") + "=";
+  var cookieKey = encodeURIComponent("UserToken") + "=";
   var expiredOn = "; expires=Fri, 31 Dec 9999 23:59:59 GMT";
   var cookieSuffix = expiredOn;
   var domain = ";domain=.etude.tr";
