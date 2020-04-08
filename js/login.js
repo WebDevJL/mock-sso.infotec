@@ -1,3 +1,4 @@
+
   function onloadPageLogin(){
 	  
 		var currentUrl = window.location.href;

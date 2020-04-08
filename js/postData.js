@@ -60,10 +60,10 @@ if (postDatabtn != undefined) {
     fetch(request, params)
       .then(response => {
         console.log("Fetch response", response)
-	if (response.redirected) {
-	  alert("what is the redirection?");
-	  window.location = response.url;
-	}
+		if (response.redirected) {
+		  alert("what is the redirection?");
+		  window.location = response.url;
+		}
         if (response.ok) {
           const jsonData = response.json();
           console.log(jsonData);
@@ -75,7 +75,7 @@ if (postDatabtn != undefined) {
         processPostReponse(data);
       })
       .catch(err => {
-	    alert(err);
+	    alert("Check console");
         console.log("Error", err);
       });
   });
