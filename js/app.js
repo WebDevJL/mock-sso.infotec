@@ -18,10 +18,6 @@ function setUrl(value, isSimulation = true) {
   }
 }
 
-
-window.addEventListener("load", function(event) {
+window.addEventListener("load", function (event) {
   console.log("event", event);
-  setSsoCookie();
 });
-
-
