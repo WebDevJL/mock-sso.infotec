@@ -21,7 +21,8 @@ if (btnEshop != undefined) {
                         this.href = linkHome;
                 }
             } else 
-                alert("The cookie named " + nameCookieUser + " doesn't exist ");
+                console.log("The cookie named " + nameCookieUser + " doesn't exist ");
+				        this.href = linkHome;
         } else 
             alert("Please select a base Url");
 	});
